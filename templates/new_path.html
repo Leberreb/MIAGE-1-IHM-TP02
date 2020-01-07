@@ -1,13 +1,37 @@
 {% extends 'base.html' %}
 
+{% block imports %}
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+{% endblock imports %}
+
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-<div class="container mt-auto">
+<div class="container-fluid mt-auto">
     <div class="row bg-orange">
         <h3 class="center">
             {{ title }}
         </h3>
     </div>
 </div>
+
+<div class="container-fluid mt-auto">
+    <div class="row">
+        <div class="col-FLUID">
+            <div id='map' style='width: 1600px; height: 840px;'></div>
+        </div>
+        <div class="col">
+            Liste des coordonnées :
+        </div>
+    </div>
+</div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGViZXJyZWIiLCJhIjoiY2s1NDJtaXF3MGRxMjNubHp3d3kxeDZ5ayJ9.t8vR-bQq05tnhhxR9nXwRw';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+    });
+</script>
 {% endblock content %}

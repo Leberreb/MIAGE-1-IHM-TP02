@@ -26,6 +26,8 @@
       href="{{ url_for('static', filename='styles/colors.css') }}"
     />
 
+    {% block imports %}{% endblock imports %}
+
     <title>IHM TP02 - {% block title %}{% endblock title %}</title>
   </head>
 
