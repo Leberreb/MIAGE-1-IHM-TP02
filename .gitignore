@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Visual Studio Code parameters
-.vscodez
+.vscode
