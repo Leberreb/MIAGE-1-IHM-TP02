@@ -18,10 +18,12 @@ def new_path():
 def history_path():
    return render_template('history_path.html', title = 'Historique des trajets')
 
+# Page not found page
 @app.errorhandler(404)
 def page_not_found(error):
    return render_template('error.html', title = '404'), 404
 
+# Error page
 @app.errorhandler(500)
 def server_error(error):
    return render_template('error.html', title = '500'), 500

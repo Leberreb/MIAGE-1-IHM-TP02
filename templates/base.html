@@ -33,7 +33,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">IHM TP02</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">IHM TP02</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -95,4 +95,9 @@
     {{ p_title }}
   </p>
 </div>
+{% endmacro %}
+
+{% macro dataTables() %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/> 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
 {% endmacro %}
