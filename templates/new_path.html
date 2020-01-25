@@ -4,7 +4,6 @@
 
 {% block imports %}
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-<script src="{{ url_for('static', filename='js/dataTablesActivator.js') }}"></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
 {% endblock imports %}
 
@@ -13,20 +12,20 @@
 {% block content %}
     {{ titleHeader(title) }}
 
-    <div class="container-fluid mt-auto bg-black">
+    <div class="container-fluid mt-auto">
         <div class="row">
             <div class="col nopadding">
-                <div id='map' style='width: 1600px; height: 840px;'></div>
+                <div id='map' style='width: 1450px; height: 830px;'></div>
             </div>
             <div class="col nopadding">
-                <table class="table table-dark table-hover">
+                <table class="table table-light table-hover">
                     <thead>
                         <tr>
                             <th>Liste des coordonnées :</th>
                         </tr>
                     </thead>
                 </table>
-                <table id="dataTable" class="table table-dark table-hover">
+                <table id="dataTable" class="table table-light table-hover">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -45,14 +44,18 @@
             </div>
         </div>
     </div>
-
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoibGViZXJyZWIiLCJhIjoiY2s1NDJtaXF3MGRxMjNubHp3d3kxeDZ5ayJ9.t8vR-bQq05tnhhxR9nXwRw';
-        var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11'
-        });
-    </script>
 {% endblock content %}
 
+{% block js %}
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGViZXJyZWIiLCJhIjoiY2s1NDJtaXF3MGRxMjNubHp3d3kxeDZ5ayJ9.t8vR-bQq05tnhhxR9nXwRw';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+    });
+</script>
+
 {{ dataTables() }}
+
+<script src="{{ url_for('static', filename='js/dataTablesActivator.js') }}"></script>
+{% endblock js %}
