@@ -1,6 +1,20 @@
-$(document).ready(function() {
+$(document).ready(function () {
+    // DataTable features
     var table = $("#dataTable").DataTable({
-        rowReorder: true
+        ordering: false,
+        paging: false,
+        search: false,
+        info: false,
+        bFilter: false,
+        rowReorder: {
+            selector: 'tr'
+        },
+        columnDefs: [{
+            targets: 0,
+            visible: false
+        }]
     });
-    console.log('dataTable imported')
+
+    // DataTable imported
+    console.log('dataTable imported.');
 });
