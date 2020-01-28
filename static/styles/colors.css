@@ -5,3 +5,8 @@
 .bg-black {
     background-color: #353A40;
 }
+
+.lk-black a {
+    color: #353A40;
+    text-decoration: none;
+}
