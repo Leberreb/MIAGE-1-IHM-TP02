@@ -29,45 +29,68 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col" class="bg-orange"></th>
                             <th scope="col">Longitude (X)</th>
                             <th scope="col">Latitude (Y)</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td scope="row">1</td>
+                            <td scope="row">0</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
                             <td scope="row">1.53</td>
                             <td scope="row">4</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
+                            <td scope="row">1.53</td>
+                            <td scope="row">4</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
                         </tr>
                         <tr>
                             <td scope="row">2</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
                             <td scope="row">2.53</td>
                             <td scope="row">6</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
                         </tr>
                         <tr>
                             <td scope="row">3</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
                             <td scope="row">3.53</td>
                             <td scope="row">5</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
                         </tr>
                         <tr>
                             <td scope="row">4</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
                             <td scope="row">3.53</td>
                             <td scope="row">5</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
                         </tr>
                         <tr>
                             <td scope="row">5</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
                             <td scope="row">3.53</td>
                             <td scope="row">5</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
                         </tr>
                         <tr>
                             <td scope="row">6</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
                             <td scope="row">3.53</td>
                             <td scope="row">5</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
                         </tr>
                         <tr>
                             <td scope="row">7</td>
+                            <td scope="row" class="bg-orange grabbable"></td>
                             <td scope="row">3.53</td>
                             <td scope="row">5</td>
+                            <td scope="row"><button type="button" class="btn-dark btn-delete">X</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -88,4 +111,5 @@
 {{ dataTables() }}
 
 <script src="{{ url_for('static', filename='js/dataTablesParameters.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dataTablesFunctions.js') }}"></script>
 {% endblock js %}

@@ -1,20 +1,26 @@
-$(document).ready(function () {
-    // DataTable features
-    var table = $("#dataTable").DataTable({
-        ordering: true,
-        paging: false,
-        search: false,
-        info: false,
-        bFilter: false,
-        rowReorder: {
-            selector: 'tr'
-        },
-        columnDefs: [{
-            targets: 0,
-            visible: true
-        }]
-    });
+// Datatable variable
+var v_table;
 
-    // DataTable imported
-    console.log('dataTable imported.');
+$(document).ready(function() {
+  // DataTable features
+  v_table = $("#dataTable").DataTable({
+    paging: false,
+    search: false,
+    info: false,
+    bFilter: false,
+    rowReorder: true,
+    columnDefs: [
+      {
+        targets: 0,
+        visible: false
+      },
+      {
+        orderable: false,
+        targets: "_all"
+      },
+    ]
+  });
+
+  // DataTable imported
+  console.log("dataTable Parameters imported.");
 });
