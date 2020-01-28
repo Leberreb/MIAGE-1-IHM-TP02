@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // DataTable features
     var table = $("#dataTable").DataTable({
-        ordering: false,
+        ordering: true,
         paging: false,
         search: false,
         info: false,
