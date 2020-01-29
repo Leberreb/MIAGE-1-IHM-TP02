@@ -6,14 +6,13 @@
 {% block content %}
     {{ titleHeader(title) }}
 
-    <div class="container p-5 text-center lk-black">
-        <div class="row">
-            <a href="{{ url_for('new_path') }}">
-                <div class="col col-huge bg-orange p-5"><h5>Effectuer un nouveau trajet</h5></div>
+    <div class="grid-container p-5 text-center lk-black">
+            <a class="grid-item" href="{{ url_for('new_path') }}">
+                <div class="col col-huge bg-orange p-5 lk-main">Effectuer un nouveau trajet</div>
             </a>
-            <div class="col"></div>
-            <a href="{{ url_for('history_path') }}">
-                <div class="col col-huge bg-orange p-5"><h5>Consulter l'historique des trajets</h5></div>
+            <div class="grid-item"></div>
+            <a class="grid-item" href="{{ url_for('history_path') }}">
+                <div class="col col-huge bg-orange p-5 lk-main">Consulter l'historique des trajets</div>
             </a>
         </div>
     </div>
