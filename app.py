@@ -4,6 +4,10 @@ from flask import Flask
 from flask import render_template
 from flask import send_from_directory
 
+from Coordinates import Coordinates
+from Path import Path
+
+
 app = Flask(__name__)
 
 # Favicon
