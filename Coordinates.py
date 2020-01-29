@@ -9,3 +9,7 @@ class Coordinates(object):
     # Returns a list of coordinates [x, y]
     def getCoordinates(self):
         return [self.latitude, self.longitude]
+
+    # ToString function
+    def __str__(self):
+        return "[%s;%s]" %(self.latitude, self.longitude)

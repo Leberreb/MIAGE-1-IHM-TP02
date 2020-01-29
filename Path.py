@@ -1,3 +1,10 @@
+from datetime import date
+from Coordinates import Coordinates
+
 # Path class
 class Path(object):
-    pass
+    
+    # Constructor
+    def __init__(self, coordinatesList):
+        self.creationDate = date.today()
+        self.coordinatesList = coordinatesList
