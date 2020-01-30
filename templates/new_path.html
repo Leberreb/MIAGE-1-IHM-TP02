@@ -45,16 +45,11 @@
 {% endblock content %}
 
 {% block js %}
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibGViZXJyZWIiLCJhIjoiY2s1NDJtaXF3MGRxMjNubHp3d3kxeDZ5ayJ9.t8vR-bQq05tnhhxR9nXwRw';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-    });
-</script>
+<!-- MapBox -->
+<script src="{{ url_for('static', filename='js/mapboxParameters.js') }}"></script>
 
+<!-- DataTables -->
 {{ dataTables() }}
-
 <script src="{{ url_for('static', filename='js/dataTablesParameters.js') }}"></script>
 <script src="{{ url_for('static', filename='js/dataTablesFunctions.js') }}"></script>
 {% endblock js %}

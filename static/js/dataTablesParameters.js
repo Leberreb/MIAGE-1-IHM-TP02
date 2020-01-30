@@ -1,7 +1,7 @@
 // Datatable variable
 var v_table;
 
-$(document).ready(function() {
+$(document).ready(function () {
   // DataTable features
   v_table = $("#dataTable").DataTable({
     paging: false,
@@ -9,8 +9,7 @@ $(document).ready(function() {
     info: false,
     bFilter: false,
     rowReorder: true,
-    columnDefs: [
-      {
+    columnDefs: [{
         targets: 0,
         visible: false
       },
@@ -22,5 +21,5 @@ $(document).ready(function() {
   });
 
   // DataTable imported
-  console.log("dataTable Parameters imported.");
+  console.log("DataTable Parameters imported.");
 });
