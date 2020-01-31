@@ -13,7 +13,7 @@ $("#dataTable tbody").on("click", ".btn-delete", function () {
 function addRow(longitude, latitude) {
 	v_table.row.add([
 		counter,
-		'<div class="bg-orange grabbable"></div>',
+		'',
 		longitude,
 		latitude,
 		'<button type="button" class="btn-dark btn-delete">X</button>'
