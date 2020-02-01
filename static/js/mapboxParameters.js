@@ -54,6 +54,7 @@ map.on('load', function () {
     });
 
     map.on('click', function (e) {
+        // Import requiered features
         var features = map.queryRenderedFeatures(e.point, {
             layers: ['measure-points']
         });
