@@ -26,14 +26,89 @@ map.on('load', function () {
         'type': 'geojson',
         'data': geojson
     });
+
+    map.addLayer({
+        id: 'measure-points',
+        type: 'circle',
+        source: 'geojson',
+        paint: {
+            'circle-radius': 5,
+            'circle-color': '#000'
+        },
+        filter: ['in', '$type', 'Point']
+    });
+
+    map.addLayer({
+        id: 'measure-lines',
+        type: 'line',
+        source: 'geojson',
+        layout: {
+            'line-cap': 'round',
+            'line-join': 'round'
+        },
+        paint: {
+            'line-color': '#000',
+            'line-width': 2.5
+        },
+        filter: ['in', '$type', 'LineString']
+    });
+
+    map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point, {
+            layers: ['measure-points']
+        });
+
+        // Remove the linestring from the group
+        // So we can redraw it based on the points collection
+        if (geojson.features.length > 1) geojson.features.pop();
+
+        // If a feature was clicked, remove it from the map
+        if (features.length) {
+            var id = features[0].properties.id;
+            geojson.features = geojson.features.filter(function (point) {
+                removeRowById(id)
+                return point.properties.id !== id;
+            });
+        } else {
+            var point = {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [e.lngLat.lng, e.lngLat.lat]
+                },
+                'properties': {
+                    'id': String(new Date().getTime())
+                }
+            };
+
+            // Add row in the DataTable
+            addRow(e.lngLat.lng, e.lngLat.lat)
+
+            geojson.features.push(point);
+        }
+
+        if (geojson.features.length > 1) {
+            linestring.geometry.coordinates = geojson.features.map(function (
+                point
+            ) {
+                return point.geometry.coordinates;
+            });
+
+            geojson.features.push(linestring);
+        }
+
+        map.getSource('geojson').setData(geojson);
+    });
 });
 
-var test;
-
-// Get coordinates on map click
-map.on('click', function (e) {
-    // Add a row in the Datatable
-    addRow(e.lngLat.lng, e.lngLat.lat)
+map.on('mousemove', function (e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['measure-points']
+    });
+    // UI indicator for clicking/hovering a point on the map
+    map.getCanvas().style.cursor = features.length ?
+        'pointer' :
+        'crosshair';
 });
 
 // DataTable imported
