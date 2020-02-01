@@ -42,15 +42,13 @@
                         <th scope="col" class="bg-orange"></th>
                         <th scope="col">Longitude (X)</th>
                         <th scope="col">Latitude (Y)</th>
-                        <th scope="col">Altitute (Z)</th>
+                        <th scope="col">Elevation en mètres (Z)</th>
                     </tr>
                 </thead>
                 <tbody>
 
                 </tbody>
             </table>
-            <br>
-
         </div>
     </div>
     <br>
@@ -61,6 +59,7 @@
 {% block js %}
 <!-- MapBox -->
 <script src="{{ url_for('static', filename='js/mapboxParameters.js') }}"></script>
+<script src="{{ url_for('static', filename='js/mapboxFunctions.js') }}"></script>
 
 <!-- DataTables -->
 {{ dataTables() }}

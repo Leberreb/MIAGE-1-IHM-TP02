@@ -5,7 +5,7 @@ function createChart(p_labels, p_data) {
         data: {
             labels: p_labels,
             datasets: [{
-                label: 'Altitude (en mètres)',
+                label: 'Elevation (en mètres)',
                 data: p_data,
                 backgroundColor: [
                     'rgb(255, 165, 0)'

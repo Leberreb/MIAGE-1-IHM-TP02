@@ -20,11 +20,11 @@ function removeRowById(id) {
 function addRow(longitude, latitude) {
 	// Put values in the new row
 	v_table.row.add([
-		String(new Date().getTime()),
+		String(counter),
 		'',
-		longitude,
-		latitude,
-		''
+		longitude.toFixed(2),
+		latitude.toFixed(2),
+		currentElevation.toString()
 	]).draw(false);
 
 	// Check if the buttons should be enabled

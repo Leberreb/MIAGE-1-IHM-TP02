@@ -2,7 +2,9 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibGViZXJyZWIiLCJhIjoiY2s1NDJtaXF3MGRxMjNubHp3d3kxeDZ5ayJ9.t8vR-bQq05tnhhxR9nXwRw';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [5, 45],
+    zoom: 3.5
 });
 
 // GeoJSON collection import
@@ -19,6 +21,9 @@ var linestring = {
         'coordinates': []
     }
 };
+
+// Counter variable
+var counter = 1;
 
 // MapBox OnLoad parameters
 map.on('load', function () {
@@ -78,12 +83,18 @@ map.on('load', function () {
                     'coordinates': [e.lngLat.lng, e.lngLat.lat]
                 },
                 'properties': {
-                    'id': String(new Date().getTime())
+                    'id': String(counter)
                 }
             };
 
+            // Update Elevation
+            getElevation(e.lngLat.lng, e.lngLat.lat)
+
             // Add row in the DataTable
             addRow(e.lngLat.lng, e.lngLat.lat)
+
+            // Increment the counter by 1
+            ++counter;
 
             geojson.features.push(point);
         }
@@ -112,5 +123,5 @@ map.on('mousemove', function (e) {
         'crosshair';
 });
 
-// DataTable imported
+// MapBox imported
 console.log("MapBox Parameters and actions imported.");

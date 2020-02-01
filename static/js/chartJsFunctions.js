@@ -4,7 +4,7 @@ function generateChartValues() {
 
     for (var i = 1; i <= v_table.rows().count(); i++) {
         numberOfRows.push(i);
-        altitudes.push(v_table.rows(i-1).data()[0][2]);
+        altitudes.push(v_table.rows(i-1).data()[0][4]);
     }
 
     createChart(numberOfRows, altitudes)
