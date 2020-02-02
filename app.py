@@ -31,6 +31,10 @@ def new_path():
 def history_path():
     return render_template('history_path.html', title='Historique des trajets')
 
+@app.route('/path_save', methods=['POST'])
+def save_path():
+    return ''
+
 # Page not found page
 @app.errorhandler(404)
 def page_not_found(error):

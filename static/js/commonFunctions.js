@@ -20,4 +20,20 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
+$(function() {
+    $('saveButton').click(function() {
+        $.ajax({
+            url: '/save_path',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
+
 console.log("Common Functions imported.");
