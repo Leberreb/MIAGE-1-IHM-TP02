@@ -21,8 +21,10 @@ $(document).ready(function () {
 	});
 
 	// Hide buttons when begining the new path
-	enableButton($('#reinitialiseChartButton'), v_table);
-	enableButton($('#generateChartButton'), v_table);
+	enableButton($('#reinitialiseChartButton'), v_table, 0);
+	enableButton($('#generateChartButton'), v_table, 1);
+	enableButton($('#reinitialiseChartButtonBtm'), v_table, 0);
+	enableButton($('#generateChartButtonBtm'), v_table, 1);
 
 	// DataTable imported
 	console.log("DataTable Parameters imported.");

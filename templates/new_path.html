@@ -13,6 +13,8 @@
 {% block content %}
 {{ titleHeader(title) }}
 
+<button onclick="topFunction()" id="btnTop" class="btn bg-orange" title="Retourner en haut de page">Top</button>
+
 <div class="container-fluid mt-auto">
     <div class="row">
         <div class="col-8 nopadding">
@@ -48,6 +50,19 @@
                 <tbody>
 
                 </tbody>
+            </table>
+            <table class="table table-light table-hover nopadding">
+                <thead>
+                    <tr>
+                        <th style="color: white; visibility: hidden;">Liste des coordonnées du trajet</th>
+                        <th><button id="generateChartButtonBtm" type="button" class="btn bg-orange"
+                                onclick="generateChartValues()">Générer le
+                                graphe</button></th>
+                        <th><button id="reinitialiseChartButtonBtm" type="button" class="btn btn-dark"
+                                onclick="window.location.href='{{ url_for('new_path') }}'">Réinitialiser le
+                                trajet</button></th>
+                    </tr>
+                </thead>
             </table>
         </div>
     </div>
