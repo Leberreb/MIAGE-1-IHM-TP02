@@ -93,8 +93,8 @@ map.on('load', function () {
             // Add row in the DataTable
             addRow(e.lngLat.lng, e.lngLat.lat)
 
-            // Increment the counter by 1
-            ++counter;
+                // Increment the counter by 1
+                ++counter;
 
             geojson.features.push(point);
         }
@@ -121,6 +121,16 @@ map.on('mousemove', function (e) {
     map.getCanvas().style.cursor = features.length ?
         'pointer' :
         'crosshair';
+});
+
+map.on('mousemove', function (e) {
+    document.getElementById('info').innerHTML =
+        // e.point is the x, y coordinates of the mousemove event relative
+        // to the top-left corner of the map
+        "Longitude : " + e.lngLat.lng.toFixed(2) +
+        '<br />' +
+        // e.lngLat is the longitude, latitude geographical position of the event
+        "Latitude : " + e.lngLat.lat.toFixed(2);
 });
 
 // MapBox imported
