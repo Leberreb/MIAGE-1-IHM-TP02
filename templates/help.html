@@ -5,4 +5,66 @@
 
 {% block content %}
     {{ titleHeader(title) }}
+
+    <div class="p-5">
+        <h5>Créer un nouveau trajet :</h5>
+        <table class="table-bordered" style="width: 100%; height: 100%;">
+            <tr>
+                <td class="center" style="width: 15%;">I</td>
+                <td style="width: 30%;"><p>Dans la page principale ou la barre de navigation en haut de la page, cliquer sur "Nouveau trajet".</p></td>
+                <td style="width: 55%;">
+                    <p>Acceder depuis la page principale :</p>
+                    <img src="{{ url_for('static', filename='img/Guide12.png') }}" width="100%" height="50%" alt="Cliquer sur Nouveau trajet (Page principale)">
+                    <br><br>
+                    <p>Depuis la barre de navigation :</p>
+                    <img src="{{ url_for('static', filename='img/Guide11.png') }}" alt="Cliquer sur Nouveau trajet (Barre de navigation)">
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td class="center" style="width: 15%;">II</td>
+                <td style="width: 30%;">
+                    <p>Dans la page de création de trajet, cliquer sur la carte pour ajouter des points de trajet. (cf 1.)</p>
+                    <br><br>
+                    <p>Lorsque le trajet est terminé d'être dessiné, cliquer sur le bouton "Générer le graphe". (Cadre rouge)</p>
+                    <br><br>
+                    <p>Afin de réinitialiser la carte, cliquer sur le bouton "Réinitialier le trajet". (Cadre vert)</p>
+                </td>
+                <td style="width: 55%;">
+                    <p>Dessiner un nouveau trajet</p>
+                    <img src="{{ url_for('static', filename='img/Guide13.png') }}" width="100%" height="50%" alt="Dessiner le trajet">
+                    <br><br>
+                    <p>Résultat de la génération du graphe :</p>
+                    <img src="{{ url_for('static', filename='img/Guide14.png') }}" width="100%" height="50%" alt="Résultat du graphe">
+                </td>
+            </tr>
+        </table>
+        <br>
+        <h5>Sauvegarder un trajet :</h5>
+        <table class="table-bordered" style="width: 100%; height: 100%;">
+            <tr>
+                <td class="center" style="width: 15%;">I</td>
+                <td style="width: 30%;">
+                    <p>Lorsque le trajet est tracé dans la page de création, cliquer sur le bouton "Sauvegarder le trajet".</p>
+                </td>
+                <td style="width: 55%;">
+                    <p>Sauvegarder le trajet :</p>
+                    <img src="{{ url_for('static', filename='img/Guide21.png') }}" width="100%" height="50%" alt="Sauvegarder le trajet">
+                </td>
+            </tr>
+            <tr>
+                <td class="center" style="width: 15%;">II</td>
+                <td style="width: 30%;">
+                    <p>Afin d'accéder aux trajets nouvellement enregistré, cliquer sur "Historique des trajets" dans la page principale ou la barre de navigation en haut de la page.</p>
+                    <br><br>
+                    <p>Enfin, afin d'accéder au trajet enregisté de votre choix, cliquer sur la tuile correspondante.</p>
+                </td>
+                <td style="width: 55%;">
+                    <p>Page des trajets enregistrés</p>
+                    <img src="{{ url_for('static', filename='img/Guide22.png') }}" width="100%" height="50%" alt="Page des trajets enregistrés">
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
 {% endblock content %}
