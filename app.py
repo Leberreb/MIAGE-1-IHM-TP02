@@ -31,6 +31,10 @@ def new_path():
 def history_path():
     return render_template('history_path.html', title='Historique des trajets')
 
+@app.route('/help')
+def help():
+    return render_template('help.html', title="Guide d'utilisation")
+
 @app.route('/path_save', methods=['POST'])
 def save_path():
     return ''

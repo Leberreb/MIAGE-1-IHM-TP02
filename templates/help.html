@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% from 'base.html' import titleHeader with context %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {{ titleHeader(title) }}
+{% endblock content %}
