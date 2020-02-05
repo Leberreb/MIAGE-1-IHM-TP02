@@ -4,20 +4,17 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
-    {{ titleHeader(title) }}
+{{ titleHeader(title) }}
 
-    <div class="grid-container p-5">
+<div class="grid-container p-5">
+    {% for path in paths %}
+    <a href="{{ url_for('new_path') }}">
         <div class="grid-item bg-black">
-            <h1 class="text-white">Trajet 1 :</h1>
+            <h1 class="text-white">Trajet {{paths.index(path) + 1}} </h1>
+            <h4 class="text-white">Enregistré le {{ path.creationDate.strftime("%d/%m/%Y %H:%M:%S") }}</h4>
         </div>
-        <div class="grid-item bg-black">
-            <h1 class="text-white">Trajet 2 :</h1>
-        </div>
-        <div class="grid-item bg-black">
-            <h1 class="text-white">Trajet 3 :</h1>
-        </div>
-        <div class="grid-item bg-black">
-            <h1 class="text-white">Trajet 4 :</h1>
-        </div>
-    </div>
+    </a>
+
+    {% endfor %}
+</div>
 {% endblock content %}
