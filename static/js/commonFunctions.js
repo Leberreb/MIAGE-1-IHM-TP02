@@ -20,16 +20,28 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
-$(function() {
-    $('saveButton').click(function() {
+$(function () {
+    var clicked;
+
+    $('#saveButton').click(function () {
+        clicked = $(this).attr("name");
+        
+        // Stringify the data
+        var dataJson = '';
+        for (var i = 1; i < v_table.rows().data().length; i++) {
+            dataJson = dataJson + JSON.stringify(v_table.rows().data()[i]);
+        }
+
+        var urlRequest = "/save_path/" + dataJson
+
+        // Send the data to the server to save
         $.ajax({
-            url: '/save_path',
-            data: $('form').serialize(),
+            url: urlRequest,
             type: 'POST',
-            success: function(response) {
+            success: function (response) {
                 console.log(response);
             },
-            error: function(error) {
+            error: function (error) {
                 console.log(error);
             }
         });
