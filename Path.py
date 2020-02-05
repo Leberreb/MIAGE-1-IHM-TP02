@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import datetime
 from Coordinates import Coordinates
 
 # Path class
@@ -6,5 +6,5 @@ class Path(object):
     
     # Constructor
     def __init__(self, coordinatesList):
-        self.creationDate = date.today()
+        self.creationDate = datetime.now()
         self.coordinatesList = coordinatesList
