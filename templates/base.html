@@ -3,65 +3,72 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
+	<meta charset="UTF-8" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-  <!-- Style CSS -->
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
+	<!-- Toastr CSS -->
+	<link type="text/css" rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 
-  <!-- Colors CSS -->
-  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/colors.css') }}" />
+	<!-- Style CSS -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}" />
 
-  {% block imports %}{% endblock imports %}
+	<!-- Colors CSS -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/colors.css') }}" />
 
-  <title>IHM TP02 - {% block title %}{% endblock title %}</title>
+	{% block imports %}{% endblock imports %}
+
+	<title>IHM TP02 - {% block title %}{% endblock title %}</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ url_for('index') }}">IHM TP02</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('new_path') }}">Nouveau trajet</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('history_path') }}">Historique des trajets</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('help') }}">Guide d'utilisation</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        Analyse géographique d'un trajet
-      </span>
-    </div>
-  </nav>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="{{ url_for('index') }}">IHM TP02</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+			aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('new_path') }}">Nouveau trajet</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('history_path') }}">Historique des trajets</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('help') }}">Guide d'utilisation</a>
+				</li>
+			</ul>
+			<span class="navbar-text">
+				Analyse géographique d'un trajet
+			</span>
+		</div>
+	</nav>
 
-  {% block content %}{% endblock content %}
+	{% block content %}{% endblock content %}
 
-  <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
+	<!-- Popper JS -->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
+	<!-- Bootstrap JS -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
 
-  <!-- Common Functions -->
-  <script src="{{ url_for('static', filename='js/commonFunctions.js') }}"></script>
+	<!-- Toastr JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+	<!-- Common Functions -->
+	<script src="{{ url_for('static', filename='js/commonFunctions.js') }}"></script>
 </body>
 
 </html>
@@ -70,9 +77,9 @@
 
 {% macro titleHeader(p_title) %}
 <div class="bg-orange p-1">
-  <p class="h1 text-center">
-    {{ p_title }}
-  </p>
+	<p class="h1 text-center">
+		{{ p_title }}
+	</p>
 </div>
 {% endmacro %}
 
@@ -80,7 +87,7 @@
 <!-- DataTable CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
 <link rel="stylesheet" type="text/css"
-  href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css" />
+	href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css" />
 
 <!-- DataTable JS -->
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>

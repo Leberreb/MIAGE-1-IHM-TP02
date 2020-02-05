@@ -35,6 +35,8 @@
                         <th><button id="reinitialiseChartButton" type="button" class="btn btn-dark"
                                 onclick="window.location.href='{{ url_for('new_path') }}'">Réinitialiser le
                                 trajet</button></th>
+                        <th><button type="button" name="SaveButton" id="saveButton"
+                                class="btn btn-success">Sauvegarder le trajet</button></th>
                     </tr>
                 </thead>
             </table>
@@ -62,6 +64,8 @@
                         <th><button id="reinitialiseChartButtonBtm" type="button" class="btn btn-dark"
                                 onclick="window.location.href='{{ url_for('new_path') }}'">Réinitialiser le
                                 trajet</button></th>
+                        <th><button type="button" name="SaveButton" id="saveButtonBtm"
+                                class="btn btn-success">Sauvegarder le trajet</button></th>
                     </tr>
                 </thead>
             </table>
@@ -69,7 +73,6 @@
     </div>
     <br>
     <br>
-    <button type="button" name="SaveButton" id="saveButton" class="btn btn-success">Sauvegarder</button>
 </div>
 {% endblock content %}
 

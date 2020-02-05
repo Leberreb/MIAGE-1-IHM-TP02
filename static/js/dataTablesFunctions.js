@@ -14,8 +14,10 @@ function removeRowById(id) {
 	// Check if the buttons should still be enabled
 	enableButton($('#reinitialiseChartButton'), v_table, 0);
 	enableButton($('#generateChartButton'), v_table, 1);
+	enableButton($('#saveButton'), v_table, 1);
 	enableButton($('#reinitialiseChartButtonBtm'), v_table, 0);
 	enableButton($('#generateChartButtonBtm'), v_table, 1);
+	enableButton($('#saveButtonBtm'), v_table, 1);
 }
 
 // Add new row in DataTable
@@ -32,8 +34,10 @@ function addRow(longitude, latitude) {
 	// Check if the buttons should be enabled
 	enableButton($('#reinitialiseChartButton'), v_table, 0);
 	enableButton($('#generateChartButton'), v_table, 1);
+	enableButton($('#saveButton'), v_table, 1);
 	enableButton($('#reinitialiseChartButtonBtm'), v_table, 0);
 	enableButton($('#generateChartButtonBtm'), v_table, 1);
+	enableButton($('#saveButtonBtm'), v_table, 1);
 }
 
 // Enable of Disable the button depending on the number of rows
