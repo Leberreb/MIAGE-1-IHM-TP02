@@ -31,12 +31,15 @@ def new_path():
 
 @app.route('/path/<arrayPath>')
 def path(arrayPath):
-    return render_template('new_path.html', title='Trajet enregistré')
+    arrayIndex = int(arrayPath)
+    arrayNumber = arrayIndex + 1
+    fullTitle = 'Trajet ' + str(arrayNumber) + ' - ' + str(savedPath[arrayIndex].creationDate.strftime("%d/%m/%Y"))
+    return render_template('path.html', title=fullTitle, path=savedPath[arrayIndex])
 
 # Path history page
 @app.route('/history_path')
 def history_path():
-    return render_template('history_path.html', title='Historique des trajets', paths=savedPath, counter=0)
+    return render_template('history_path.html', title='Historique des trajets', paths=savedPath)
 
 # Help page
 @app.route('/help')

@@ -6,9 +6,9 @@
 {% block content %}
 {{ titleHeader(title) }}
 
-<div class="grid-container p-5">
+<div class="grid-container p-5 lk-white">
     {% for path in paths %}
-    <a href="{{ url_for('new_path') }}">
+    <a href="{{ url_for('path', arrayPath=paths.index(path)) }}">
         <div class="grid-item bg-black">
             <h1 class="text-white">Trajet {{paths.index(path) + 1}} </h1>
             <h4 class="text-white">Enregistré le {{ path.creationDate.strftime("%d/%m/%Y %H:%M:%S") }}</h4>

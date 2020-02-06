@@ -51,7 +51,15 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    {% for coordinate in path.coordinatesList %}
+                    <tr>
+                        <td>{{ path.coordinatesList.index(coordinate) + 1 }}</td>
+                        <td></td>
+                        <td>{{ coordinate.longitude }}</td>
+                        <td>{{ coordinate.latitude }}</td>
+                        <td>{{ coordinate.altitude }}</td>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
             <table class="table table-light table-hover nopadding">

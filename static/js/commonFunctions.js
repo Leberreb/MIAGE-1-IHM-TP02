@@ -71,6 +71,36 @@ $(function () {
             }
         });
     });
+
+    $('#saveButtonBtm').click(function () {
+        clicked = $(this).attr("name");
+
+        // Stringify the data
+        var dataJson = '';
+        for (var i = 1; i < v_table.rows().data().length; i++) {
+            dataJson = dataJson + JSON.stringify(v_table.rows().data()[i]);
+        }
+
+        var urlRequest = "/save_path/" + dataJson
+
+        // Send the data to the server to save
+        $.ajax({
+            url: urlRequest,
+            type: 'POST',
+            success: function (response) {
+                // Disable buttons
+                $('#saveButton').attr("disabled", true);
+                $('#saveButtonBtm').attr("disabled", true);
+
+                // signaling the success
+                toastr.success('Trajet sauvegardé !');
+                console.log(response);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
 });
 
 console.log("Common Functions imported.");
