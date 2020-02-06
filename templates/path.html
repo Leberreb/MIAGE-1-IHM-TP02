@@ -98,4 +98,10 @@
 {{ chartJs() }}
 <script src="{{ url_for('static', filename='js/chartJsParameters.js') }}"></script>
 <script src="{{ url_for('static', filename='js/chartJsFunctions.js') }}"></script>
+
+<script>
+    $( document ).ready(function() {
+        $('#generateChartButton').click();
+    });
+</script>
 {% endblock js %}
